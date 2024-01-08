@@ -13,7 +13,6 @@
        <link href="{{asset('css/style.css')}}" rel="stylesheet">
     </head>
     <body>
-    
         <section id="tabs">
             <div class="container">
                 <h6 class="section-title h1">Repository Pattern Mini Project</h6>
@@ -76,7 +75,14 @@
                      </tr>
                  </thead>
                  <tbody>
-       
+                     @foreach($users as $key => $user)
+                         <tr>
+                             <td>{{$key + 1}}</td>
+                             <td>{{$user->name}}</td>
+                             <td>{{$user->email}}</td>
+                             <td>{{\Carbon\Carbon::parse($user->created_at)->diffForHumans()}}</td>
+                         </tr>
+                     @endforeach
                  </tbody>
                  
              </table>

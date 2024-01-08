@@ -1,7 +1,8 @@
 <?php
 namespace App\Repository;
 
-use App\Moduls\User;
+
+use App\Models\User;
 use App\RepositoryInterfaces\UserRepositoryInterface;
 
 class DBUsersRepository implements UserRepositoryInterface{
@@ -12,6 +13,6 @@ class DBUsersRepository implements UserRepositoryInterface{
     }
     public function create($attributes)
     {
-     
+     return User::create($attributes);
     }
 }
